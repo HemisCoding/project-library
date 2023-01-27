@@ -16,6 +16,7 @@ function Book(Title, Author, Pages, Read){
 function addBooktoLibrary(Title, Author, Pages, Read) {
     let book = new Book(Title, Author, Pages, Read);
     myLibrary.push(book);
+    displayBooksOnPage();
 }
 
 //const theHobbit = new Book ("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read")
@@ -40,14 +41,44 @@ function displayBooksOnPage() {
     })
 }
 
+// Start event listener/display form to add a new book to library
+const addBookButton = document.querySelector(".add-book-button");
+addBookButton.addEventListener("click", displayTheForm);
+
+function displayTheForm() {
+    document.getElementById("add-book-form").style.display="";
+}
+
+// Start event listener/add input to array for new entry form
+const submitButton = document.querySelector(".submit-button");
+submitButton.addEventListener("click", intakeFormData);
+
+// Transform form data to variables for intake
+// (".value" will pull the content of the textbox)
+function intakeFormData() {
+    let Title = document.getElementById("Title").value;
+    let Author = document.getElementById("Author").value;
+    let Pages = document.getElementById("Pages").value;
+    let Read = document.getElementById("Read").value;
+
+    // Call the function to input data to array
+    addBooktoLibrary(Title, Author, Pages, Read);
+
+    // Reset the form after succesful submission
+    document.getElementById("add-book").reset();
+}
+
+
+
+
 //Calling function and adding data manually for now, until the form is built out
-addBooktoLibrary("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read");
-addBooktoLibrary("Bursa pentru Incepatori", "Alin Hem", "20 pages", "read");
-addBooktoLibrary("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read");
-addBooktoLibrary("Bursa pentru Incepatori", "Alin Hem", "20 pages", "read");
-addBooktoLibrary("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read");
-addBooktoLibrary("Bursa pentru Incepatori", "Alin Hem", "20 pages", "read");
+//addBooktoLibrary("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read");
+//addBooktoLibrary("Bursa pentru Incepatori", "Alin Hem", "20 pages", "read");
+//addBooktoLibrary("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read");
+//addBooktoLibrary("Bursa pentru Incepatori", "Alin Hem", "20 pages", "read");
+//addBooktoLibrary("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read");
+//addBooktoLibrary("Bursa pentru Incepatori", "Alin Hem", "20 pages", "read");
 
-console.log("End of code array content", myLibrary);
+//console.log("End of code array content", myLibrary);
 
-displayBooksOnPage();
+//displayBooksOnPage();
