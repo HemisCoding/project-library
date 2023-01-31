@@ -9,6 +9,7 @@
 
 .form-heading {
     border-style: groove;
+    background-color: greenyellow;
 }
 
 h1 {
@@ -17,10 +18,15 @@ h1 {
 
 .books-heading {
     border-style: groove;
+    background-color: greenyellow;
 }
 
 .form {
     border-style: groove;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .books {
@@ -40,4 +46,39 @@ h1 {
     text-align: center;
     height: 400px;
     display: grid;
+}
+
+.add-book-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#Title{
+    width: 300px;
+}
+#add-book {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 300px;
+}
+
+.submit-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.reset-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
 }
